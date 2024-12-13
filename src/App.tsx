@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './styles.css';
+import { Header } from "./components/Header";
+import { TaskBar } from './components/TaskBar';
+import { Task } from './components/Task';
+import { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+export interface PostType {
+  id: number;
+  content: string;
+  hadFinished: boolean;
+}
+
+export function App() {
+  const [posts, setPosts] = useState<PostType[]>([
+      { id: 1, content: 'Ir para academia hoje.', hadFinished: false },
+      { id: 2, content: 'Estudar React.', hadFinished: false },
+  ]);
+
+  function addNewPost(content: string) {
+      const newPost = {
+          id: posts.length + 1,
+          content,
+          hadFinished: false,
+      };
+      setPosts([...posts, newPost]);
+  }
+
+  function deletePost(id: number) {
+    const updatedPosts = posts.filter((post) => post.id !== id);
+    setPosts(updatedPosts);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Header />
+      <TaskBar onAddPost={addNewPost} />
+      <Task posts={posts} onDeletePost={deletePost} />
+    </div>
   )
 }
 
-export default App
+

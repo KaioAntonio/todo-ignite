@@ -1,0 +1,55 @@
+.markButton {
+    background: transparent;
+    border: 0;
+    color: var(--blue);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 0.2px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background: var(--gray-500);
+    max-width: 800px; 
+    margin: 0.75rem auto 0;
+    width: 100%; 
+    border-radius: 8px;
+    padding: 2.5rem;
+    border: 2px solid var(--gray-400);
+}
+
+.post footer button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 0.2px;
+}
+
+.finished span {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.finishedButton {
+    background: var(--purple);
+    color: var(--gray-100);
+    border: 0;
+    border-radius: 50%;
+
+}
+
+.content {
+    color: var(--gray-100);
+    font-size: 14px;
+}
+

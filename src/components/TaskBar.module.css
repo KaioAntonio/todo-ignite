@@ -1,0 +1,38 @@
+.taskBar form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espaçamento entre input e botão */
+    max-width: 50%; /* Largura máxima da barra */
+    margin: -2rem auto; /* Faz a barra ficar um pouco sobre o header */
+    padding: 0.5rem 0; /* Ajuste de espaçamento para a barra */
+}
+
+  
+.taskBar form textarea {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-500);
+  border-radius: 5px;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  height: 54px;
+  resize: none;
+}
+  
+.taskBar form button {
+  padding: 0.5rem 1rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.2rem;
+  transition: color 0.1s, background-color 0.1s;
+}
